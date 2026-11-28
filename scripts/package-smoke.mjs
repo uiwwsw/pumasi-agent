@@ -54,7 +54,7 @@ try {
   await page
     .getByRole("button", { name: "모드 설정", exact: true })
     .click();
-  await page.getByText("고급: 모델과 팀").click();
+  await page.locator("summary", { hasText: "고급: 모델" }).click();
   await expect(page.getByLabel("답할 모델", { exact: true })).toHaveValue(
     "auto-free",
   );
